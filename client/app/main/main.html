@@ -1,0 +1,125 @@
+<div class="container-fluid">
+    <div class="row slider-container">
+
+        <div class="slider-content">
+            <div class="container">
+                <a href="http://ruchjow.pl" class="logo">
+                    <img src="assets/images/ruchjow-pl-logo.png" alt=""/>
+                </a>
+            </div>
+        </div>
+
+        <ul class="slider">
+            <li class="slider-item">
+                <div class="slider-content">
+                    <div class="container">
+                        <span class="slide-title">
+                            Popierasz działania<br/>na rzecz JOW?
+                        </span>
+
+                        <p class="slide-text"><span>Zostań pełnomocnikiem wyborczym Ruchu JOW<br/>Zgłaszaj kandydatów do komisji obwodowej!
+                        <br><br><br><br></span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+<div class="container">
+ <div class="row"  ng-controller="MainCtrl">
+  <h1 style="text-align:center;"> Wypełnij formularz, a my wyślemy Ci pełnomocnictwo!</h1>
+  <br>
+  <div class="col-lg-3"> </div>    
+  <form novalidate name="userForm">
+    <div class="col-lg-6">
+     <div class="form-group" ng-class="{ 'has-error' : userForm.imie.$invalid && !userForm.imie.$pristine }">
+        <label class="control-label" for="imie">Imię</label>
+        <div class="input-group" >
+          <input type="text" class="form-control" name="imie" id="imie" ng-model="user.imie" placeholder="Podaj swoje imię" required>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>          
+          </div>
+          <p ng-show="userForm.imie.$invalid && !userForm.imie.$pristine" class="help-block">Imię jest wymagane!</p>    
+      </div>
+      <div class="form-group">
+        <label for="drugie_imie">Drugie imię</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="drugie_imie" id="drugie_imie" ng-model="user.drugie_imie" placeholder="Podaj swoje drugie imię lub zostaw puste jeśli nie posiadasz">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+      </div>
+       <div class="form-group" ng-class="{ 'has-error' : userForm.nazwisko.$invalid && !userForm.nazwisko.$pristine }">
+        <label for="nazwisko">Nazwisko</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="nazwisko" id="nazwisko" ng-model="user.nazwisko" placeholder="Podaj swoje nazwisko" required>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+          <p ng-show="userForm.nazwisko.$invalid && !userForm.nazwisko.$pristine" class="help-block">Nazwisko jest wymagane!</p>   
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.miejscowosc.$invalid && !userForm.miejscowosc.$pristine }">
+        <label for="miejscowosc">Miejscowość</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="miejscowosc" id="miejscowosc" ng-model="user.miejscowosc" placeholder="Podaj miejscowość w której mieszkasz" required>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+          </div>
+           <p ng-show="userForm.miejscowosc.$invalid && !userForm.miejscowosc.$pristine" class="help-block">Miejscowość jest wymagana!</p>   
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.ulica.$invalid && !userForm.ulica.$pristine }">
+        <label for="ulica">Ulica i numer domu/mieszkania</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="ulica" id="ulica" ng-model="user.ulica" placeholder="Podaj ulicę i numer domu/mieszkania" required>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+          </div>
+           <p ng-show="userForm.ulica.$invalid && !userForm.ulica.$pristine" class="help-block">Ulica i numer domu/mieszkania są wymagana!</p>   
+      </div>
+        <div class="form-group" ng-class="{ 'has-error' : userForm.kod.$invalid && !userForm.kod.$pristine }">
+        <label for="kod">Kod pocztowy</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="kod" id="miejscowosc" ng-model="user.kod" placeholder="Podaj swój kod pocztowy" required>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+          </div>
+           <p ng-show="userForm.kod.$invalid && !userForm.kod.$pristine" class="help-block">Kod pocztowy jest wymagany!</p>   
+      </div>
+       <div class="form-group">
+        <label for="pesel">Pesel</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="pesel" id="pesel" ng-model="user.pesel" placeholder="Podaj swój pesel">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+        <label for="email">Adres email</label>
+        <div class="input-group">
+          <input type="email" class="form-control" id="email" name="email" ng-model="user.email" placeholder="Podaj swój adres email" required  >
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+          </div>
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Adres email jest wymagany!</p>   
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : userForm.telefon.$invalid && !userForm.telefon.$pristine }">
+        <label for="telefon">Numer telefonu</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="telefon" name="telefon" ng-model="user.telefon" placeholder="Podaj numer telefonu" required >
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+          </div>
+           <p ng-show="userForm.telefon.$invalid && !userForm.telefon.$pristine" class="help-block">Telefon jest wymagany!</p>   
+      </div>
+        <div class="form-group" ng-class="{ 'has-error' : userForm.obszar.$invalid && !userForm.obszar.$pristine }">
+        <label for="obszar">Obszar na który mamy udzielić pełnomocnictwa</label>
+        <div class="input-group">
+          <textarea type="textarea" rows="8" class="form-control" name="obszar" id="obszar"  ng-model="user.obszar" placeholder="Podaj obszar na który chciałbyś otrzymać pełnomocnictwo. Udzielamy pełnomocnictwa na jeden Powiat lub Gminę.                                                                                        Przykład prawidłowo wypełnionego pola w przypadku gdy oczekujemy pełnomocnictwa dla powiatu Milickiego: 'Powiat milicki'. Przykład dla miasta na prawach powiatu:'Powiat Kraków'. W przypadku miasta stołecznego Warszawa proszę podać również dzielnicę np. 'Powiat Warszawa dzielnica Mokotów'" required/>
+          
+        <!--    <autocomplete ng-model="gmina" data="gminy" on-type="getGminy"></autocomplete>
+ -->
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+          </div>
+           <p ng-show="userForm.obszar.$invalid && !userForm.obszar.$pristine" class="help-block">Obszar jest wymagany!</p>   
+      </div>
+      <input type="submit" name="submit" id="submit" ng-disabled="sent || userForm.$invalid" ng-click="update(user)" value="Wyślij zgłoszenie" class="btn-lg btn-info pull-right">
+    </div>
+  </form>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+     <a href="https://ruchjow.pl">ruchJOW.pl</a>
+  </div>
+</footer>
+
+</div>
